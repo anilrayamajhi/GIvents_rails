@@ -1,3 +1,26 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.glyphicon {
+  font-size: 24px;
+  color:white;
+  margin-top:10px;
+}
+
+.glyphicon:hover {
+  color: red;
+}
+
+.glyphicon-trash, .glyphicon-pencil {
+  color:black;
+}
+
+.entry {
+  color:#ee7575;
+}
+
+.entry:hover {
+  text-decoration: none;
+  color:red
+}

@@ -1,0 +1,8 @@
+<%= simple_form_for  @event do |f| %>
+  <%= f.input :e_name, label:"Event name" %>
+  <%= f.input :e_address, label:"Event address" %>
+  <%= f.input :e_date, label:"Event date" %>
+  <%= f.input :e_time, label:"Event time" %>
+  <%= f.input :e_description, label:"Event description" %>
+  <%= f.submit %>
+<% end %>

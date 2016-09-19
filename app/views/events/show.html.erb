@@ -1,2 +1,9 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
+
+
+<%= link_to 'Go Back', events_path, class:"btn btn-danger", style:"font-size:27px"%><br /><br />
+<div class="jumbotron">
+  <h3 class="label label-default" >Event: <%= @event.e_name%></h3>
+  <%= @event.e_address%>
+</div>
