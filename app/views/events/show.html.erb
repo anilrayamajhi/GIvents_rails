@@ -1,9 +1,47 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
 
+<div style="height: 400px" id="map"></div>
+<script>
+$(function () {
+$('[data-toggle="popover"]').popover()
+})
+</script>
+<script>
+  var map;
+  function getAddress() {
+    $.get('https://maps.googleapis.com/maps/api/geocode/json?address=<%= @event.e_address %>')
+    .success(function(data) {
+      // console.log("Latitude:", data.results[0].geometry.location.lat)
+      // console.log("Longitute:", data.results[0].geometry.location.lng)
+      var geocodedAddress = data.results[0].geometry.location
+      myMap = new google.maps.Map(document.getElementById('map'), {
+        center: geocodedAddress,
+        zoom: 16,
+        content: 'Uluru (Ayers Rock)'
+      });
+      var marker = new google.maps.Marker({
+        position: geocodedAddress,
+        map: myMap,
+      });
+      var contentString = "<strong><%= @event.e_name %></strong><br />"+
+      "<%= @event.e_date %><br /><i><%= @event.e_address %></i>"
+      var infowindow = new google.maps.InfoWindow({
+         content: contentString
+       });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+  });
+    })
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGpU5i66YurDTpGk9tb9DLhoBGKPzxUBE&callback=getAddress"
+    async defer></script>
+
 
 <%= link_to 'Go Back', events_path, class:"btn btn-danger", style:"font-size:27px"%><br /><br />
 <div class="jumbotron">
-  <h3 class="label label-default" >Event: <%= @event.e_name%></h3>
+  <h3>Event: <%= @event.e_name%></h3>
+  <h3>Event: <%= @event.e_date%></h3>
   <%= @event.e_address%>
 </div>
