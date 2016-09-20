@@ -1,0 +1,8 @@
+<h1>Users#index</h1>
+
+
+<% @users.each do |u| %>
+<hr />
+<%= u.name %>
+<%= link_to 'Delete', user_path(u), method: :delete %>
+<% end %>

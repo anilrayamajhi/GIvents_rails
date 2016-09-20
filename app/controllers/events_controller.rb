@@ -13,10 +13,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new({
-      e_name:params[:event][:e_name], e_address:params[:event][:e_address]}, e_date:params[:event][:e_date],
-      e_time:params[:event][:e_time],
-      e_description:params[:event][:e_description])
+    @event = Event.new(event_params)
 
       if @event.save
         redirect_to root_path(@event)
@@ -41,12 +38,18 @@ class EventsController < ApplicationController
       redirect_to events_path
     end
 
-    private
-  def event_params
-    params.require(:event).permit(:e_name, :e_address, :e_description)
-  end
-
   def find_event
     @event = Event.find(params[:id])
   end
+
+  private
+  def event_params
+    params.require(:event).permit(:e_name, :e_address, :e_description, :e_datetime)
+  end
+
+  # {e_name: "Potluck", e_address: "1520 2nd St.", e_description: "A fun afternoon!", e_datetime: "Sept 22, 2016 4:00", admin: true}
+  # becomes:
+  # {e_name: "Potluck", e_address: "1520 2nd St.", e_description: "A fun afternoon!", e_datetime: "Sept 22, 2016 4:00"}
+
+
 end

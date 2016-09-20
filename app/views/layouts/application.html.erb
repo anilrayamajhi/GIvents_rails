@@ -11,19 +11,27 @@
 <div class="container-fluid">
   <nav class="navbar navbar-inverse">
   <span title="Home">
-    <%= link_to events_path, class: "glyphicon glyphicon-home col-md-1" do %>
+    <%= link_to events_path, class: "glyphicon glyphicon-home col-md-2" do %>
     <% end %>
   </span>
   <span title="Pin Event">
-    <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin ganey col-md-1" do %>
+    <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin ganey col-md-2" do %>
     <% end %>
   </span>
-  <span title="Sign Up">
-    <%= link_to 'Sign Up', new_event_path%>
-  </span>
+<span>
+  <% if logged_in? %>
+  <%= "#{current_user.name}  " %><%= link_to 'Log Out', logout_path, class: 'col-md-2 signog' %>
+  <% else %>
+  <%= link_to 'Login', new_session_path, class: 'col-md-2 signog'%>
+  <%= link_to 'Sign Up', new_user_path, class: 'col-md-2 signog'%>
+<% end %>
+</span>
+
 </nav>
   <%= yield %>
 </div>
+
+<%# time_ago_in_words(Time.parse("July 23 2017")) %>
 
 </body>
 </html>

@@ -26,6 +26,7 @@ $('[data-toggle="popover"]').popover()
       });
       var contentString = "<strong><%= @event.e_name %></strong><br />"+
       "<%= @event.e_date %><br /><i><%= @event.e_address %></i>"
+      "<br /><i><%= @event.e_address %></i>"
       var infowindow = new google.maps.InfoWindow({
          content: contentString
        });
@@ -44,4 +45,10 @@ $('[data-toggle="popover"]').popover()
   <h3>Event: <%= @event.e_name%></h3>
   <h3>Event: <%= @event.e_date%></h3>
   <%= @event.e_address%>
+  <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
+  <p>Time: <%= formated_time(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
+  <p><%= @event.e_description%></p>
+  <p>
+    <%= @event.e_address%>
+  </p>
 </div>
