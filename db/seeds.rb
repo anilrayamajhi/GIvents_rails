@@ -10,4 +10,4 @@
 # events = Event.create([{e_name: "rave", e_address:"3232 Robertson Blvd", e_date:'20161010', e_time:'002225', e_description:"jsnalnsjbjajspcijjas knscoancouos"}])
 
 
-users =User.create([{name:"ganey", email:"ttt@ttt.com", password:"abcdef"}])
+# users = User.create([{name:"ganey", email:"ttt@ttt.com", password_digest:"abcdef"}])

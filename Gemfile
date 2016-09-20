@@ -30,6 +30,10 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+#added
+gem 'quiet_assets'
+gem 'better_errors'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
