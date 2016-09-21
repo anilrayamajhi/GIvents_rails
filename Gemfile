@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#amazon photo upload gem files
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2'
+#####
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
