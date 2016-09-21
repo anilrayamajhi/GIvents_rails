@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authorize, only: [:show, :edit]
-  # before_action :find_event, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -29,13 +28,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-      @user.destroy
-      redirect_to events_path
+    redirect_to event_path(@user)
     end
 
-  # def find_user
-  #   @user = User.find(params[:id])
-  # end
+  def find_user
+    @user = User.find_by_name(params[:id])
+  end
 
   private
   def user_params

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update, :destroy]
+  before_action :check_event, only: [:edit, :destroy]
 
   def index
     @events = Event.all.order("created_at DESC")
@@ -42,9 +43,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def check_event
+    if @event.user == current_user
+    else
+      flash[:error] = "Edit only your event!!"
+      redirect_to root_path
+    end
+  end
+
   private
   def event_params
-    params.require(:event).permit(:e_name, :e_address, :e_description, :e_datetime)
+    params.require(:event).permit(:e_name, :e_address, :e_description, :e_datetime, :user_id)
   end
 
   # {e_name: "Potluck", e_address: "1520 2nd St.", e_description: "A fun afternoon!", e_datetime: "Sept 22, 2016 4:00", admin: true}
