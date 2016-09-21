@@ -14,16 +14,19 @@
     <%= link_to events_path, class: "glyphicon glyphicon-home col-md-2" do %>
     <% end %>
   </span>
+  <% if logged_in? %>
   <span title="Pin Event">
     <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin ganey col-md-2" do %>
     <% end %>
   </span>
+  <% end %>
 <span>
   <% if logged_in? %>
-  <span class="col-md-2 signog"><%= "#{current_user.name}".upcase %></span><%= link_to 'Log Out', logout_path, class: 'col-md-2 signog', data: {confirm: "Are you sure?"} %>
+  <%= link_to 'Log Out', logout_path, class: 'col-md-1 signog', :style=>'float:right;', data: {confirm: "Are you sure?"} %>
+  <span class="col-md-2 signog", style='float:right;'><%= link_to "#{current_user.name}".upcase, user_path(current_user.name) %></span>
   <% else %>
-  <%= link_to 'Login', new_session_path, class: 'col-md-2 signog'%>
-  <%= link_to 'Sign Up', new_user_path, class: 'col-md-2 signog'%>
+  <%= link_to 'Sign Up', new_user_path, class: 'col-md-1 signog', :style=>'float:right;'%>
+  <%= link_to 'Login', new_session_path, class: 'col-md-2 signog', :style=>'float:right;'%>
 <% end %>
 </span>
 

@@ -1,0 +1,41 @@
+<h1>show#id</h1>
+
+<div class="jumbotron">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>
+          <h2><strong>Events</strong></h2>
+        </td>
+        <td>
+          <h3><strong>Edit</strong></h3>
+        </td>
+        <td>
+          <h3><strong>Trash</strong></h3>
+        </td>
+      </tr>
+    </thead>
+    <tbody >
+    <% @events.each do |evnt| %>
+      <tr>
+        <td>
+          <h3><strong><%= link_to evnt.e_name, event_path(evnt), class:"entry" %></strong></h3>
+        </td>
+        <td>
+          <span title="Edit Event">
+            <%= link_to edit_event_path(evnt), class: "glyphicon glyphicon-pencil col-md-1" do %>
+            <% end %>
+          </span>
+        </td>
+        <td>
+          <span title="Trash Event">
+            <%= link_to "events/#{evnt[:id]}", class: "glyphicon glyphicon-trash col-md-1", method: :delete, data: {confirm: "Are you sure?"} do %>
+            <% end %>
+          </span>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>
+
+</div>
