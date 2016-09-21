@@ -1,12 +1,17 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="jumbotron">
+  <h1>Event: <%= @event.e_name%></h1>
+
+
 <%= link_to 'Go Back', events_path, class:"btn btn-danger", style:"font-size:17px"%><br /><br />
+
+<br />
+  <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
+  <p>Time: <%= formated_time(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
+  <p><%= @event.e_description%></p>
+  <p><i>Address: <%= @event.e_address%></i>
+  </p>
+</div>
 <div style="height: 400px" id="map"></div>
-<script>
-$(function () {
-$('[data-toggle="popover"]').popover()
-})
-</script>
 <script>
   var map;
   function getAddress() {
@@ -38,15 +43,3 @@ $('[data-toggle="popover"]').popover()
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGpU5i66YurDTpGk9tb9DLhoBGKPzxUBE&callback=getAddress"
     async defer></script>
-
-
-<br />
-<div class="jumbotron">
-  <h3>Event: <%= @event.e_name%></h3>
-  <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
-  <p>Time: <%= formated_time(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
-  <p><%= @event.e_description%></p>
-  <p>
-    <%= @event.e_address%>
-  </p>
-</div>

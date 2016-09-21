@@ -12,15 +12,16 @@
 <div class="container-fluid">
   <nav class="navbar navbar-inverse">
   <span title="Home">
-    <%= link_to events_path, class: "glyphicon glyphicon-home col-xs-2 col-md-2" do %>
+    <%= link_to events_path, class: "glyphicon glyphicon-home col-xs-2 col-md-2 signog" do %>
     <% end %>
   </span>
+
   <% if logged_in? %>
   <span title="Pin Event">
-    <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin ganey col-xs-2 col-md-2" do %>
+    <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin col-xs-2 col-md-2 signog" do %>
     <% end %>
-  </span>
-  <% end %>
+    </span>
+    <% end %>
 <span>
   <% if logged_in? %>
   <%= link_to 'Log Out', logout_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;', data: {confirm: "Are you sure?"} %>
@@ -36,6 +37,27 @@
 </div>
 
 <%# time_ago_in_words(Time.parse("July 23 2017")) %>
+
+
+<div id="contacts">
+  <div class="social"><a href="https://www.facebook.com/gnrlassembly/" target="_blank">&#62220;</a></div>
+  <div class="social">&#62223;</div>
+    <div class="social"><a href="mailto:anilrm07@gmail.com">&#9993;</a></div>
+  <div class="social"><a href="https://goo.gl/wHbfEl" target="_blank">&#59172;</a></div>
+  <span id="change"><div class="social"><a id="mobile" href="tel:(213) 263-4147">&#128241;</a></div></span>
+
+
+<footer>
+<div class="ganey">
+Copyright &copy; AR -
+<a href="mailto:anilrm07@gmail.com">GIvents</a><br>
+Anil Rayamajhi<br>
+AR-GIvents<br>
+1520 2nd St<br />
+CA 90401, Santa Monica<br />
+(213) 263-4147
+    </div>
+</footer>
 
 </body>
 </html>
