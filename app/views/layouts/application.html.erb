@@ -17,6 +17,7 @@
   </span>
 
   <% if logged_in? %>
+
   <%if current_user.id == 20 %>
   <span title="All users">
     <%= link_to 'Admin', users_path, class: "col-xs-1 col-md-1 signog"%>
@@ -29,7 +30,11 @@
     <% end %>
 <span>
   <% if logged_in? %>
+  <% if current_user.id == '' %>
+  <%= link_to 'Log Out', logout_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;', data: {confirm: "I'm on a new level... I'm on a new level..."} %>
+  <% else %>
   <%= link_to 'Log Out', logout_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;', data: {confirm: "Are you sure?"} %>
+  <% end %>
   <span><%= link_to "#{current_user.name}".upcase, user_path(current_user.name), class:'col-xs-2 col-md-2 signog', :style=>'float:right;' %></span>
   <% else %>
   <%= link_to 'Sign Up', new_user_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;'%>

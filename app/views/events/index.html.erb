@@ -24,10 +24,10 @@
         <td style="float:right;">
 
           <div style="height:300px;width:300px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
-            <% if evnt.photo_file_name == nil %>
+            <% if evnt.photo1_file_name == nil %>
             <%= image_tag 'default_title.jpg', style:"border-radius:37px 0 37px 0;" %>
             <% else %>
-            <%= image_tag evnt.photo.url(:medium), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+            <%= image_tag evnt.photo1.url(:medium), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
             <% end %>
           </div>
           <span title="Trash Event" style="float:right">

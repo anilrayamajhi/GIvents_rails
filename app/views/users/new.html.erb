@@ -1,10 +1,15 @@
-<h1>Signup!</h1>
+<div class="jumbotron">
+  <h1>Signup!</h1>
 
-<%= simple_form_for :user, url: '/users', html: { multipart: true } do |f| %>
-  <%= f.input :name, label:"Name: " %>
-  <%= f.input :email, label:"Email: " %>
-  <%= f.input :password, label:"Password: " %>
-  <%= f.input :password_confirmation, label:"Password Confirmation: " %>
-  <%= f.file_field :photo%>
-  <%= f.submit "Sign Up" %>
-<% end %>
+  <%= simple_form_for :user, url: '/users', html: { multipart: true } do |f| %>
+    <%= f.input :name, label:"Name: " %>
+    <%= f.input :email, label:"Email: " %>
+    <%= f.input :password, label:"Password: " %>
+    <%= f.input :password_confirmation, label:"Password Confirmation: " %>
+    <br />
+    <i>Upload profile picture</i>
+    <%= f.file_field :photo%><br /><br />
+    <%= f.submit "Sign Up" %>
+  <% end %>
+
+</div>
