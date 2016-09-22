@@ -15,8 +15,11 @@
 <br />
   <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
   <p>Time: <%= formated_time(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
-  <p><%= @event.e_description%></p>
-  <p><i>Address: <%= @event.e_address%></i>
+  <p>
+    Event Description: 
+  </p>
+  <%= @event.e_description%>
+  <p><br /><br /><i>Address: <%= @event.e_address%></i>
   </p>
 </div>
 <div style="height: 500px" id="map"></div>
