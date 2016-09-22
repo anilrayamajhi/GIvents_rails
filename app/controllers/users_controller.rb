@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    redirect_to event_path(@user)
     end
 
   def find_user

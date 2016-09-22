@@ -17,6 +17,11 @@
   </span>
 
   <% if logged_in? %>
+  <%if current_user.id == 20 %>
+  <span title="All users">
+    <%= link_to 'Admin', users_path, class: "col-xs-1 col-md-1 signog"%>
+    </span>
+    <% end %>
   <span title="Pin Event">
     <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin col-xs-2 col-md-2 signog" do %>
     <% end %>
