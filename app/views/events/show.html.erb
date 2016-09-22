@@ -4,11 +4,13 @@
   <h1><%= @event.e_name%></h1>
 
 
-<% if @event.photo_file_name == nil %>
-<%= image_tag 'default_photo.jpg', style:"height:100px;border:2px solid black;border-radius: 12px;" %>
-<% else %>
-<%= image_tag current_user.photo.url(:thumb) %>
-<% end %>
+<div style="height:500px;width:1200px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
+  <% if @event.photo_file_name == nil %>
+  <%= image_tag 'default_event.jpg', style:"border-radius:37px 0 37px 0;" %>
+  <% else %>
+  <%= image_tag @event.photo.url(:original), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+  <% end %>
+</div>
 
 <br />
   <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
