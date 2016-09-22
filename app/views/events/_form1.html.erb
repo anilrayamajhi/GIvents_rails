@@ -1,8 +1,11 @@
-<%= simple_form_for  @event do |f| %>
-  <%= f.input :e_name, label:"Event name" %>
-  <%= f.input :e_address, label:"Event address" %>
-  <%= f.input :e_datetime, label:"Event time" %>
-  <%= f.input :e_description, label:"Event description" %>
-  <%= f.hidden_field :user_id, :value => current_user.id%>
-  <%= f.submit %>
-<% end %>
+<div class="jumbotron">
+  <%= simple_form_for  @event do |f| %>
+    <%= f.input :e_name, label:"Event name" %>
+    <%= f.input :e_address, label:"Event address" %>
+    <%= f.input :e_datetime, label:"Event time" %>
+    <%= f.input :e_description, label:"Event description" %>
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+    <%= f.file_field :photo%><br /><br />
+    <%= f.submit %>
+  <% end %>
+</div>
