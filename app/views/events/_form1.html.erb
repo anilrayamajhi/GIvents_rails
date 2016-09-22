@@ -4,8 +4,9 @@
     <%= f.input :e_address, label:"Event address" %>
     <%= f.input :e_datetime, label:"Event time" %>
     <%= f.input :e_description, label:"Event description" %>
-    <%= f.hidden_field :user_id, :value => current_user.id%>
-    <%= f.file_field :photo%><br /><br />
+    <%= f.hidden_field :user_id, :value => current_user.id%><br />
+    <i>1200x500 photo recommended for better view</i>
+    <%= f.file_field :photo, :multiple => true %><br /><br />
     <%= f.submit %>
   <% end %>
 </div>
