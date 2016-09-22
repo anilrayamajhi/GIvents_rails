@@ -3,7 +3,7 @@
   <% if current_user.photo_file_name == nil %>
   <%= image_tag 'default_photo.jpg', style:"height:100px;border-radius: 12px;box-shadow: 7px 7px 7px #d2d2d2;" %>
   <% else %>
-  <%= image_tag current_user.photo.url(:thumb) %>
+  <%= image_tag current_user.photo.url(:thumb), style:"height:100px;border-radius: 12px;box-shadow: 7px 7px 7px #d2d2d2;" %>
   <% end %>
 
   <table class="table table-hover">

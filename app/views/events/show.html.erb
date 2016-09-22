@@ -1,14 +1,14 @@
 <%= link_to 'Go Back', events_path, class:"btn btn-danger", style:"font-size:17px"%><br /><br />
 
-<div class="jumbotron">
+<div class="jumbotron container-fluid">
   <h1><%= @event.e_name%></h1>
 
 
-<div style="height:500px;width:1200px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
+<div class=''style="height:500px;width:1200px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
   <% if @event.photo_file_name == nil %>
   <%= image_tag 'default_event.jpg', style:"border-radius:37px 0 37px 0;" %>
   <% else %>
-  <%= image_tag @event.photo.url(:original), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+  <%= image_tag @event.photo.url(:original), style:"height:500px;width:1000px;display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
   <% end %>
 </div>
 
@@ -16,7 +16,7 @@
   <p>Date: <%= formated_date(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
   <p>Time: <%= formated_time(@event.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")) %></p>
   <p>
-    Event Description: 
+    Event Description:
   </p>
   <%= @event.e_description%>
   <p><br /><br /><i>Address: <%= @event.e_address%></i>
