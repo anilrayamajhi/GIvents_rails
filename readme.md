@@ -119,9 +119,14 @@ Admin POV:
 ###Acknowledgements:
 Credits:<br>
 
-* Eventbrite (events info used for site)
+* [Eventbrite](https://www.eventbrite.com/) (events info used for site)
+
 * Gems:
-	1. Phillipe, Jimmy, Comrak: GA tutors
-	2. José Valim, Carlos Antônio, Rafael França: simple_form
-	2. Thomas McDonald: bootstrap-scss
-	3. Jon Yurek: paperclip
+
+Gem| Author/Authors
+--------------|------
+[simple_form](https://rubygems.org/gems/simple_form)|José Valim, Carlos Antônio, Rafael França
+[bootstrap-sass](https://rubygems.org/gems/bootstrap-sass)|Thomas McDonald
+[paperclip](https://rubygems.org/gems/paperclip)|Jon Yurek
+[aws-sdk](https://rubygems.org/gems/aws-sdk)|Amazon Web Services
+[bcrypt](https://rubygems.org/gems/bcrypt)|Coda Hale
