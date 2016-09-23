@@ -1,0 +1,47 @@
+<!-- <div class=''style="height:500px;width:1200px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
+  <% if @event.photo1_file_name == nil %>
+  <%= image_tag 'default_event.jpg', style:"border-radius:37px 0 37px 0;" %>
+  <% else %>
+  <%= image_tag @event.photo1.url(:original), style:"height:500px;width:1000px;display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+  <% end %>
+</div>
+<div class=''style="border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
+  <% if @event.photo2_file_name == nil %>
+  <%= image_tag 'default_event.jpg', style:"border-radius:37px 0 37px 0;" %>
+  <% else %>
+  <%= image_tag @event.photo2.url(:original), style:"height:500px;width:1000px;display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+  <% end %>
+</div> -->
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="background-color:rgba(0, 0, 0, 1);">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" >
+    <div class="item active">
+      <%= image_tag @event.photo1.url(:original), :style=>"margin:auto;"%>
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag @event.photo2.url(:original), :style=>"margin:auto;" %>
+      <div class="carousel-caption">
+      </div>
+    </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
