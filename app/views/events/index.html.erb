@@ -14,14 +14,14 @@
       </tr>
     </thead>
     <tbody >
-    <% @events.each do |evnt| %>
-      <tr>
-        <td>
+    <% @events.each_slice(3).each do |group| %>
+    <% group.each do |evnt| %>
+      <div
+      <div class="col-md-4">
           <h3 style="margin-bottom:177px;"><strong><%= link_to evnt.e_name, event_path(evnt), class:"entry" %></strong></h3>
           <p><strong><%= link_to formated_date(evnt.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")), event_path(evnt), class:"entry" %></strong></p>
           <p><strong><%= link_to formated_time(evnt.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")), event_path(evnt), class:"entry" %></strong></p>
-        </td>
-        <td style="float:right;">
+
 
           <div style="height:300px;width:300px;border-radius:37px 0 37px 0; box-shadow: 17px 17px 17px #d2d2d2;">
             <% if evnt.photo1_file_name == nil %>
@@ -38,10 +38,11 @@
             <%= link_to edit_event_path(evnt), class: "glyphicon glyphicon-pencil col-md-1" do %>
             <% end %>
           </span>
-        </td>
-      </tr>
+        </div>
+        <% end %>
+    </div>
     <% end %>
-    </tbody>
+  
 </table>
 
 </div>
