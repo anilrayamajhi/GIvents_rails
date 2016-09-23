@@ -24,12 +24,20 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
     <div class="item active">
-      <%= image_tag @event.photo1.url(:original), :style=>"margin:auto;"%>
+      <% if @event.photo1_file_name == nil %>
+      <%= image_tag 'default_event.jpg'%>
+      <% else %>
+      <%= image_tag @event.photo1.url(:original), :style=>"display:flex;margin:auto;"%>
+      <% end %>
       <div class="carousel-caption">
       </div>
     </div>
     <div class="item">
+      <% if @event.photo2_file_name == nil %>
+      <%= image_tag 'default_event.jpg' %>
+      <% else %>
       <%= image_tag @event.photo2.url(:original), :style=>"margin:auto;" %>
+      <% end %>
       <div class="carousel-caption">
       </div>
     </div>
