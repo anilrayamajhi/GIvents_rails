@@ -6,9 +6,9 @@
     <%= f.input :e_description, label:"Event description" %>
     <%= f.hidden_field :user_id, :value => current_user.id%><br />
     <i>1200x500 photo recommended for better view</i>
-    <%= f.file_field :photo, :multiple => true %><br /><br />
+    <%= f.file_field :photo1%><br /><br />
     <i>300x300 photo recommended for new feeds page</i>
-    <%= f.file_field :photo, :multiple => true %><br /><br />
+    <%= f.file_field :photo2 %><br /><br />
     <%= f.submit %>
   <% end %>
 </div>

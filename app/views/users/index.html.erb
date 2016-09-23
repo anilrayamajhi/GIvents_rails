@@ -1,9 +1,12 @@
-<h1>Users info</h1>
+<div class="jumbotron">
+  <h1>Users info</h1>
 
 
-<% @users.each do |u| %>
-<hr />
-<%= u.name %><br />
-<%= u.email %>
+  <% @users.each do |u| %>
+  <hr />
+  <%= u.name %><br />
+  <%= u.email %><br />
+  <%= image_tag current_user.photo.url(:thumb) %>
+  <% end %>
 
-<% end %>
+</div>

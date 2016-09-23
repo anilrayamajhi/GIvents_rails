@@ -32,6 +32,10 @@ class Event < ActiveRecord::Base
 
 
 
+###########################################################################
+
+
+
    # The below code sets up this model to support file attachments.
 # The listed options include:
 # styles: a hash of file sizes which will automatically be created in addition to the original uncropped size.
@@ -58,5 +62,33 @@ def s3_credentials
 end
 # makes sure that the only type of file being uploaded is an image:
 validates_attachment_content_type :photo1, content_type: /\Aimage\/.*\Z/
+
+
+
+
+###########################################################################
+
+
+
+has_attached_file :photo2,
+                   styles: { medium: "300x300#", thumb: "100x100#" },
+               default_url: "/images/:style/missing.png",
+                    :storage => :s3,
+                    url: ":s3_domain_url",
+                    path: "/:class/:attachment/:id_partition/:style/:filename",
+                    s3_region: 'us-west-1',
+                    :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+
+def s3_credentials
+  {
+    :bucket => ENV["S3_BUCKET_NAME"],
+    :access_key_id => ENV["S3_ACCESS_KEY_ID"],
+    :secret_access_key => ENV["S3_SECRET_ACCESS_KEY"]
+  }
+end
+
+# makes sure that the only type of file being uploaded is an image:
+validates_attachment_content_type :photo2, content_type: /\Aimage\/.*\Z/
+
 
 end
