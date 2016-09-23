@@ -6,7 +6,11 @@
   <hr />
   <%= u.name %><br />
   <%= u.email %><br />
-  <%= image_tag current_user.photo.url(:thumb) %>
+  <% if u.photo_file_name == nil %>
+  <%= image_tag 'default_photo.jpg', style:"height:100px;box-shadow: 7px 7px 7px #d2d2d2;", class:"thumbnail" %>
+  <% else %>
+  <%= image_tag u.photo.url(:thumb), class:"thumbnail", style:"box-shadow: 7px 7px 7px #d2d2d2;" %>
+  <% end %>
   <% end %>
 
 </div>
