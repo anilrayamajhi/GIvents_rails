@@ -6,19 +6,12 @@
         <% end %>
 
   <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>
-          <h2><strong>Events</strong></h2>
-        </td>
-      </tr>
-    </thead>
-    <tbody >
+    
     <% @events.each_slice(3).each do |group| %>
     <% group.each do |evnt| %>
       <div
       <div class="col-md-4">
-          <h3 style="margin-bottom:177px;"><strong><%= link_to evnt.e_name, event_path(evnt), class:"entry" %></strong></h3>
+          <h3 style=""><strong><%= link_to evnt.e_name, event_path(evnt), class:"entry" %></strong></h3>
           <p><strong><%= link_to formated_date(evnt.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")), event_path(evnt), class:"entry" %></strong></p>
           <p><strong><%= link_to formated_time(evnt.e_datetime.to_s.in_time_zone("Central Time (US & Canada)")), event_path(evnt), class:"entry" %></strong></p>
 
@@ -42,7 +35,7 @@
         <% end %>
     </div>
     <% end %>
-  
+
 </table>
 
 </div>
