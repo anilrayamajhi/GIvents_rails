@@ -10,39 +10,8 @@
 <body>
 
 <div class="container-fluid">
-  <nav class="navbar navbar-inverse">
-  <span title="Home">
-    <%= link_to events_path, class: "glyphicon glyphicon-home col-xs-2 col-md-2 signog" do %>
-    <% end %>
-  </span>
 
-  <% if logged_in? %>
-
-  <%if current_user.id == 20 %>
-  <span title="All users">
-    <%= link_to 'Admin', users_path, class: "col-xs-1 col-md-1 signog"%>
-    </span>
-    <% end %>
-  <span title="Pin Event">
-    <%= link_to new_event_path, class: "glyphicon glyphicon-pushpin col-xs-2 col-md-2 signog" do %>
-    <% end %>
-    </span>
-    <% end %>
-<span>
-  <% if logged_in? %>
-  <% if current_user.id == '' %>
-  <%= link_to 'Log Out', logout_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;', data: {confirm: "I'm on a new level... I'm on a new level..."} %>
-  <% else %>
-  <%= link_to 'Log Out', logout_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;', data: {confirm: "Are you sure?"} %>
-  <% end %>
-  <span><%= link_to "#{current_user.name}".upcase, user_path(current_user.name), class:'col-xs-2 col-md-2 signog', :style=>'float:right;' %></span>
-  <% else %>
-  <%= link_to 'Sign Up', new_user_path, class: 'col-xs-1 col-md-1 signog', :style=>'float:right;'%>
-  <%= link_to 'Login', new_session_path, class: 'col-xs-2 col-md-2 signog', :style=>'float:right;'%>
-<% end %>
-</span>
-<span class="col-xs-4 col-md-4" style="font-size:27px;float:right;color:white;margin-top:7px;">GIvents</span>
-</nav>
+<%= render  'layouts/nav' %>
 
 <br /><br /><br />
   <%= yield %>
