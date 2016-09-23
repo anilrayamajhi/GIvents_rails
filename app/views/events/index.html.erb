@@ -20,7 +20,7 @@
             <% if evnt.photo1_file_name == nil %>
             <%= image_tag 'default_title.jpg', style:"border-radius:37px 0 37px 0;" %>
             <% else %>
-            <%= image_tag evnt.photo1.url(:medium), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;" %>
+             <%= link_to image_tag(evnt.photo1.url(:medium), style:"display:flex;margin:auto;border-radius:37px 0 37px 0;"), event_path(evnt) %>
             <% end %>
           </div>
           <span title="Trash Event" >
