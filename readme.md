@@ -1,7 +1,7 @@
 #[GIvents](http://arcane-bayou-90843.herokuapp.com/)
 ---
 ###About Game:
-An events site where user can phost events and reach out the peoples for invitaion. <br>
+An events site where user can post events and reach out the peoples for invitaion. <br>
 [Visit site here](http://arcane-bayou-90843.herokuapp.com/)
 
 Dash board of the site:
