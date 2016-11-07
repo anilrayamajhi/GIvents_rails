@@ -59,7 +59,7 @@ Image to show the skeleton of site with minimal design to provide peripheral ide
 ###Technology Used:
 *	Framework: MVC Ruby rails
 *	Database: Postgresql
-* 	HTML, CSS(Saas, Less), Bootsrap
+* 	HTML, CSS(Sass, Less), Bootsrap
 *	Site Hosting: Heroku
 *	Photo Hosting: Amazon S3 services
 *	Google Map API
