@@ -47,8 +47,7 @@ App is simple create account, event and share
 
 
 ### App Structure
-Site model with attribute<br>
-![ ](images/uml.png)
+<br>
 
 Image to show the skeleton of site with minimal design to provide peripheral idea on app<br>
 ![ ](images/wireframe.png)
